@@ -107,3 +107,10 @@ SELECT name, date_part('year', CURRENT_DATE)-birth_year AS age FROM authors ORDE
 SELECT * FROM authors ORDER BY birth_year DESC
 
 
+-- DELETE
+-- Delete all the authors from a given country
+DELETE FROM authors WHERE country='Sweden'
+-- Delete all the books from a given category
+DELETE FROM books WHERE category='Contemporary'
+-- Delete all authors if their last_name starts with H
+DELETE FROM authors WHERE last_name LIKE 'H%'
