@@ -94,9 +94,9 @@ SELECT * from books where name Like 'A%';
 -- Select books which include a given word  (any word)
 SELECT * from books where name Like '%The%';
 -- Select authors which are “not” older than 60 years
-SELECT * from authors where birth_year>1961;
+SELECT * FROM authors where date_part('year', CURRENT_DATE)-birth_year<60;
 -- Select authors which are  older than 40 years old
-SELECT * from authors where birth_year<1981;
+SELECT * FROM authors where date_part('year', CURRENT_DATE)-birth_year>=40;
 -- Select only category,published_at from books
 SELECT category,published_at from books
 -- Count all books
